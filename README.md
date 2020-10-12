@@ -15,8 +15,9 @@ The top voted responses (excluding “update”, “meta” or moderator posts) 
 <br>
 <br>
 Huge thank you to the following Kaggle Submissions which served as the foundation of this effort: <br>
-[NLP With Disaster Tweets](https://www.kaggle.com/gunesevitan/nlp-with-disaster-tweets-eda-cleaning-and-bert#0.-Introduction-and-References)
-[Disaster NLP: Keras BERT using TFHub](https://www.kaggle.com/xhlulu/disaster-nlp-keras-bert-using-tfhub)
-[In-Depth Guide to Google's BERT](https://www.kaggle.com/ratan123/in-depth-guide-to-google-s-bert)
+[NLP With Disaster Tweets](https://www.kaggle.com/gunesevitan/nlp-with-disaster-tweets-eda-cleaning-and-bert#0.-Introduction-and-References) <br>
+[Disaster NLP: Keras BERT using TFHub](https://www.kaggle.com/xhlulu/disaster-nlp-keras-bert-using-tfhub) <br>
+[In-Depth Guide to Google's BERT](https://www.kaggle.com/ratan123/in-depth-guide-to-google-s-bert) <br>
+<br>
 <br>
 And also [PRAW](https://praw.readthedocs.io/en/latest/) the Python reddit API wrapper used for scraping questions and responses. (Not yet included in this repo)
