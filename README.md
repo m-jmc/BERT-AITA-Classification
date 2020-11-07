@@ -17,10 +17,10 @@ The top voted responses (excluding “update”, “meta” or moderator posts) 
 Despite reasonable training performance, the model did not generalize well and performed poorly on the testing set with an accuracy of just over a coin flip (55%). This model over classify A-holes, suggesting that either BERT is "hangry" and needs a snack (more data) or has decided to take frustrations from its own inadequacy out on others (and needs additional performance tuning). 
 <br>
 <br>
-<img src="confusion.png" alt="drawing" width="600" height="600"/>
+<img src="confusion.png" alt="drawing" width="200" height="200"/>
 <br>
 <br>
-<img src="classification.png" alt="drawing" width="600" height="600"/>
+<img src="classification.png" alt="drawing" width="200" height="200"/>
 <br>
 <br>
 In order to improve BERT’s temperament I’d like to introduce a larger corpus, perhaps using a different scraping method. Performance of the PRAW API began to suffer at over 500 threads and responses. Additional performance characteristics may also be evaluated (epochs, batch size, moving to a single validation cohort)
@@ -32,5 +32,3 @@ References throughout the project:
 [In-Depth Guide to Google's BERT](https://www.kaggle.com/ratan123/in-depth-guide-to-google-s-bert) <br>
 <br>
 And also [PRAW](https://praw.readthedocs.io/en/latest/) the Python reddit API wrapper used for scraping questions and responses. (Not yet included in this repo)
-
-
