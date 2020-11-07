@@ -12,7 +12,7 @@ from wordcloud import STOPWORDS
 from collections import defaultdict
 
 from sklearn.model_selection import train_test_split, StratifiedKFold, StratifiedShuffleSplit
-from sklearn.metrics import precision_score, recall_score, f1_score
+from sklearn.metrics import precision_score, recall_score, f1_score, confusion_matrix, classification_report
 
 import tokenization # This might not be needed using bt
 import tensorflow as tf
@@ -451,7 +451,39 @@ clf.train(train)
 clf.plot_learning_curve()
 
 
-#%% 
+#%% Predict on test set, add to Test DF
 y_pred = clf.predict(test)
+test['predict'] = y_pred.round().astype(int)
 
-# To be Continued!
+
+#%% Confusion Matrix
+
+con_matrix = confusion_matrix(y_true=test['target'], y_pred=test['predict'])
+
+
+# %% Pretty Confusion Matrix
+
+fig, ax = plt.subplots(figsize=(3.5, 3.5))
+ax.matshow(con_matrix, cmap=plt.cm.gist_heat, alpha=0.3)
+for i in range(con_matrix.shape[0]):
+    for j in range(con_matrix.shape[1]):
+        ax.text(x=j, y=i,s=con_matrix[i, j], va='center', ha='center', size='large')
+ 
+plt.xlabel('Predictions', fontsize=18)
+plt.ylabel('Actuals', fontsize=18)
+plt.title('Confusion Matrix', fontsize=18)
+plt.savefig('confusion.png')
+plt.show()
+
+# %% Classification Report
+
+print(classification_report(test['target'],test['predict']))
+
+# %% Print classification report to image
+
+plt.rc('figure', figsize=(2, 2))
+plt.text(0.01, 0.05, str(classification_report(test['target'],test['predict'])), {'fontsize': 10}, fontproperties = 'monospace') # approach improved by OP -> monospace!
+plt.axis('off')
+plt.tight_layout()
+plt.savefig('classification.png')
+
