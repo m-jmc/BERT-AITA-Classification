@@ -20,7 +20,7 @@ Despite reasonable training performance, the model did not generalize well and p
 <img src="confusion.png" alt="drawing" width="200" height="200"/>
 <br>
 <br>
-<img src="classification.png" alt="drawing" width="200" height="200"/>
+<img src="classification.png" alt="drawing" width="400" height="200"/>
 <br>
 <br>
 In order to improve BERT’s temperament I’d like to introduce a larger corpus, perhaps using a different scraping method. Performance of the PRAW API began to suffer at over 500 threads and responses. Additional performance characteristics may also be evaluated (epochs, batch size, moving to a single validation cohort)
